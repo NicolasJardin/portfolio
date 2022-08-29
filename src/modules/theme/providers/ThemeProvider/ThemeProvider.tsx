@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ReactFCWithChildren } from 'types/interfaces/base/ReactFCWithChildren'
 import { Theme } from 'types/interfaces/theme/Theme'
-import ThemeContext from '../contexts/ThemeContext'
+import ThemeContext from '../../contexts/ThemeContext/ThemeContext'
 
 type ThemeProviderProps = {}
 
