@@ -1,1 +1,1 @@
-export type Theme = 'default' | 'light'
+export type Theme = 'main' | 'light'

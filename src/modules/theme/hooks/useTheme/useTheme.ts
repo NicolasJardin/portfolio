@@ -5,9 +5,9 @@ const useTheme = () => {
   const { activeTheme, setActiveTheme } = useThemeContext()
 
   const changeTheme = useCallback(() => {
-    if (activeTheme === 'default') return setActiveTheme('light')
+    if (activeTheme === 'main') return setActiveTheme('light')
 
-    return setActiveTheme('default')
+    return setActiveTheme('main')
   }, [activeTheme, setActiveTheme])
 
   return {

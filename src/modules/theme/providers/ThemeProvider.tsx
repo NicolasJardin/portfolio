@@ -6,7 +6,7 @@ import ThemeContext from '../contexts/ThemeContext'
 type ThemeProviderProps = {}
 
 const ThemeProvider: ReactFCWithChildren<ThemeProviderProps> = ({ children }) => {
-  const [activeTheme, setActiveTheme] = useState<Theme>('default')
+  const [activeTheme, setActiveTheme] = useState<Theme>('main')
 
   return (
     <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
