@@ -7,9 +7,9 @@ import Router from './routes/Router'
 function App() {
   return (
     <div className="App">
-      <CssBaseline />
       <ThemeProvider>
         <ThemeHandler>
+          <CssBaseline />
           <BrowserRouter>
             <Router />
           </BrowserRouter>
