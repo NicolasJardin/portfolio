@@ -5,6 +5,7 @@ export const LinkStyled = styled(Link)(({ theme }) => ({
   transition: theme.transitions.create('color'),
 
   '&:hover': {
-    color: theme.palette.text.secondary
+    color: theme.palette.primary.main,
+    borderBottom: `2px solid ${theme.palette.primary.main}`
   }
 }))

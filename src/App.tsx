@@ -7,14 +7,14 @@ import Router from './routes/Router'
 function App() {
   return (
     <div className="App">
-      <ThemeProvider>
-        <ThemeHandler>
-          <CssBaseline />
-          <BrowserRouter>
-            <Router />
-          </BrowserRouter>
-        </ThemeHandler>
-      </ThemeProvider>
+      {/* <ThemeProvider> */}
+      {/* <ThemeHandler> */}
+      <CssBaseline />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+      {/* </ThemeHandler> */}
+      {/* </ThemeProvider> */}
     </div>
   )
 }
