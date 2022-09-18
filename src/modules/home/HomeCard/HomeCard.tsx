@@ -1,6 +1,8 @@
 import { styled, Typography } from '@mui/material'
+import TypingText from 'modules/animation/components/TypingText'
 import WaterText from 'modules/animation/components/WaterText'
 import { FadeIn } from 'modules/animation/keyframes/FadeIn'
+import FlexCenter from 'modules/styles/FlexCenter'
 import { useTranslation } from 'react-i18next'
 
 type HomeCardProps = {}
@@ -18,26 +20,23 @@ const HomeCardRoot = styled('div', {
   animation: `${FadeIn} 2s ease`
 }))
 
-const Name = styled('div', {
-  name: 'Name',
-  slot: 'Info'
-})({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
-})
-
 export default function HomeCard(props: HomeCardProps) {
   const { t } = useTranslation()
 
   return (
     <HomeCardRoot>
-      <Name>
+      <FlexCenter>
         <WaterText text={<Typography variant="h1">Nicolas Jardin</Typography>} />
-      </Name>
-      {/* <Typography>Desenvolvedor Front-end</Typography>
+      </FlexCenter>
+
+      <FlexCenter>
+        <TypingText variant="h5" maxWidth={350}>
+          {t('Desenvoldedor Front-end')}
+        </TypingText>
+      </FlexCenter>
+
       <Typography>Linkedin</Typography>
-      <Typography>Github</Typography> */}
+      <Typography>Github</Typography>
     </HomeCardRoot>
   )
 }
