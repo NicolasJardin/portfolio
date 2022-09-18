@@ -1,11 +1,21 @@
-import Header from 'modules/layout/components/Header/Header'
+import { styled } from '@mui/material'
+import HomeCard from 'modules/home/HomeCard'
+import Page from 'modules/layout/components/Page'
 
-const Home = () => {
+const HomeRoot = styled(Page, {
+  name: 'Home',
+  slot: 'Root'
+})({
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  justifyContent: 'center'
+})
+
+export default function Home() {
   return (
-    <>
-      <Header />
-    </>
+    <HomeRoot>
+      <HomeCard />
+    </HomeRoot>
   )
 }
-
-export default Home

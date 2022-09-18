@@ -1,3 +1,5 @@
+import { Typography } from '@mui/material'
+import WaterText from 'modules/animation/components/WaterText'
 import Link from 'modules/link/Link'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -10,7 +12,10 @@ const Header: FC = () => {
     <HeaderContainer>
       <Link href="#">{t('Inicio')}</Link>
       <Link>{t('Sobre mim')}</Link>
-      <Link>{t('ALGO LEGAL')}</Link>
+
+      <Link href="/">
+        <WaterText text={<Typography variant="h4">NJ</Typography>} />
+      </Link>
       <Link>{t('Projetos')}</Link>
       <Link>{t('Habilidades')}</Link>
     </HeaderContainer>
