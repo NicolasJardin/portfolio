@@ -94,9 +94,7 @@ export default function HomeCard(props: HomeCardProps) {
       </FlexCenter>
 
       <FlexCenter>
-        <TypingText variant="h5" maxWidth={350}>
-          {t('Desenvoldedor Front-end')}
-        </TypingText>
+        <TypingText variant="h5">{t('Desenvoldedor Front-end')}</TypingText>
       </FlexCenter>
 
       <DividerWithMargin />

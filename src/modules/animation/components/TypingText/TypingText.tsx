@@ -1,4 +1,6 @@
-import { keyframes, styled, Typography } from '@mui/material'
+import { keyframes, styled, Typography, TypographyProps } from '@mui/material'
+
+type TypingTextProps = TypographyProps
 
 const Typing = keyframes`
   from { width: 0 }
@@ -8,7 +10,7 @@ const Cursor = keyframes`
   from, to { border-color: transparent }
   50% { border-color: orange; }
 `
-const TypingText = styled(Typography, {
+const TypingTextStyled = styled(Typography, {
   name: 'TypingText',
   slot: 'Root'
 })({
@@ -19,4 +21,17 @@ const TypingText = styled(Typography, {
   animation: `${Typing} 3.5s steps(40, end), ${Cursor} .75s step-end infinite`
 })
 
-export default TypingText
+const TypingTextRoot = styled('div', {
+  name: 'TypingText',
+  slot: 'Root'
+})({
+  display: 'flex'
+})
+
+export default function TypingText(props: TypingTextProps) {
+  return (
+    <TypingTextRoot>
+      <TypingTextStyled {...props} />
+    </TypingTextRoot>
+  )
+}
