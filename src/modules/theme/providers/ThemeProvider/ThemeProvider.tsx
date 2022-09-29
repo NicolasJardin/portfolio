@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import { ReactFCWithChildren } from 'types/interfaces/base/ReactFCWithChildren'
+import { useState, PropsWithChildren } from 'react'
 import { Theme } from 'types/interfaces/theme/Theme'
 import ThemeContext from '../../contexts/ThemeContext/ThemeContext'
 
 type ThemeProviderProps = {}
 
-const ThemeProvider: ReactFCWithChildren<ThemeProviderProps> = ({ children }) => {
+export default function ThemeProvider({ children }: PropsWithChildren<ThemeProviderProps>) {
   const [activeTheme, setActiveTheme] = useState<Theme>('main')
 
   return (
@@ -14,5 +13,3 @@ const ThemeProvider: ReactFCWithChildren<ThemeProviderProps> = ({ children }) =>
     </ThemeContext.Provider>
   )
 }
-
-export default ThemeProvider

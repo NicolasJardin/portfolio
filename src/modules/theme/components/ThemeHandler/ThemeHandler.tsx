@@ -1,11 +1,12 @@
 import { ThemeProvider as ThemeProviderMui } from '@mui/material'
 import useThemeContext from 'modules/theme/hooks/useThemeContext'
 import MainTheme from 'modules/theme/themes/MainTheme'
-import { useMemo } from 'react'
-import { ReactFCWithChildren } from 'types/interfaces/base/ReactFCWithChildren'
+import { PropsWithChildren, useMemo } from 'react'
 import LightTheme from '../../themes/LightTheme'
 
-const ThemeHandler: ReactFCWithChildren = ({ children }) => {
+type ThemeHandlerProps = {}
+
+export default function ThemeHandler({ children }: PropsWithChildren<ThemeHandlerProps>) {
   const { activeTheme } = useThemeContext()
 
   const theme = useMemo(() => {
@@ -19,5 +20,3 @@ const ThemeHandler: ReactFCWithChildren = ({ children }) => {
 
   return <ThemeProviderMui theme={theme}>{children}</ThemeProviderMui>
 }
-
-export default ThemeHandler
