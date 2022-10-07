@@ -2,6 +2,7 @@ import { styled } from '@mui/material'
 import { PropsWithChildren } from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../Header'
+import Footer from '../Footer'
 
 type LayoutProps = {}
 
@@ -21,6 +22,7 @@ export default function Layout({ children }: PropsWithChildren<LayoutProps>) {
     <LayoutRoot>
       <Header />
       <LayoutContent>{<Outlet />}</LayoutContent>
+      <Footer />
     </LayoutRoot>
   )
 }

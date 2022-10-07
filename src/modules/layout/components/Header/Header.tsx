@@ -1,8 +1,8 @@
 import { Typography, styled } from '@mui/material'
 import WaterText from 'modules/animation/components/WaterText'
-import Link from 'modules/link/Link'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 export const HeaderContainer = styled('header', { name: 'HeaderContainer' })(({ theme }) => ({
   width: '100%',
@@ -11,22 +11,31 @@ export const HeaderContainer = styled('header', { name: 'HeaderContainer' })(({ 
   justifyContent: 'space-evenly',
   alignItems: 'center',
   background: theme.palette.background.default,
-  borderBottom: `1px solid ${theme.palette.divider}`
+  borderBottom: `1px solid ${theme.palette.divider}`,
+  padding: 20
 }))
 
+const LinkStyled = styled(Link, {
+  name: 'LinkStyled'
+})(({ theme }) => ({
+  color: theme.palette.primary.main,
+  textDecoration: 'none'
+}))
+
+//TODO AJUSTAR LINKS
 const Header: FC = () => {
   const { t } = useTranslation()
 
   return (
     <HeaderContainer>
-      <Link href="/">{t('Inicio')}</Link>
-      <Link>{t('Sobre mim')}</Link>
+      <LinkStyled to="/">{t('Inicio')}</LinkStyled>
+      <LinkStyled to="/">{t('Sobre mim')}</LinkStyled>
 
-      <Link href="/">
+      <LinkStyled to="/">
         <WaterText text={<Typography variant="h4">NJ</Typography>} />
-      </Link>
-      <Link href="/project">{t('Projetos')}</Link>
-      <Link>{t('Habilidades')}</Link>
+      </LinkStyled>
+      <LinkStyled to="/project">{t('Projetos')}</LinkStyled>
+      <LinkStyled to="/">{t('Habilidades')}</LinkStyled>
     </HeaderContainer>
   )
 }
