@@ -83,7 +83,7 @@ const RightFooter = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'flex-end',
+  justifyContent: 'center',
   gap: 10
 })
 
@@ -134,8 +134,6 @@ export default function Footer(props: FooterProps) {
 
           <Typography>Nicolasjdev@gmail.com</Typography>
         </Info>
-
-        <CopyRight variant="caption">Copyright © 2022 Nicolas Jardin dos Santos</CopyRight>
       </LeftFooter>
 
       <RightFooter>
@@ -163,6 +161,7 @@ export default function Footer(props: FooterProps) {
             <WhatsAppIcon />
           </LinkStyled>
         </SocialMediaContent>
+        <CopyRight variant="caption">Copyright © 2022 Nicolas Jardin dos Santos</CopyRight>
       </RightFooter>
     </FooterRoot>
   )
