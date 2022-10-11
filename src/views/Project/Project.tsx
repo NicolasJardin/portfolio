@@ -1,8 +1,9 @@
 import { styled } from '@mui/material'
+import Page from 'modules/layout/components/Page'
 
 type ProjectProps = {}
 
-const ProjectRoot = styled('div', {
+const ProjectRoot = styled(Page, {
   name: 'Project',
   slot: 'Root'
 })({})
