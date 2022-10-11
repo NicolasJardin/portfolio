@@ -7,7 +7,7 @@ const PageRoot = styled('div', {
   name: 'Page',
   slot: 'Root'
 })({
-  height: 'calc(100vh - 60px)'
+  minHeight: 'calc(100vh - 60px)'
 })
 
 export default function Page({ children, ...props }: PropsWithChildren<PageProps>) {
