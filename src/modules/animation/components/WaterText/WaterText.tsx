@@ -57,7 +57,7 @@ const TransparentText = styled(Text, {
   slot: 'Text'
 })(({ theme }) => ({
   color: 'transparent',
-  WebkitTextStroke: `2px ${theme.palette.primary.light}`
+  WebkitTextStroke: `2px ${theme.palette.primary.main}`
 }))
 
 const InvisibleText = styled('div', {
@@ -71,7 +71,7 @@ const AnimatedText = styled(Text, {
   name: 'AnimatedText',
   slot: 'Text'
 })(({ theme }) => ({
-  color: theme.palette.primary.light,
+  color: theme.palette.primary.main,
   animation: `${WaterEffect} 4s ease-in-out infinite`
 }))
 

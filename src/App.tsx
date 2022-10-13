@@ -10,14 +10,14 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider>
-        {/* <ThemeHandler> */}
-        <CssBaseline />
-        <BrowserRouter>
-          <Suspense>
-            <Router />
-          </Suspense>
-        </BrowserRouter>
-        {/* </ThemeHandler> */}
+        <ThemeHandler>
+          <CssBaseline />
+          <BrowserRouter>
+            <Suspense>
+              <Router />
+            </Suspense>
+          </BrowserRouter>
+        </ThemeHandler>
       </ThemeProvider>
     </div>
   )

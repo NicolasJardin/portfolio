@@ -93,7 +93,7 @@ const Circle = styled('div', {
   width: 40,
   height: 40,
   borderRadius: 100,
-  background: theme.palette.grey[200],
+  background: theme.palette.primary.main,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
