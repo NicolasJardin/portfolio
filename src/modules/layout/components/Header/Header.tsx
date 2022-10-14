@@ -18,8 +18,13 @@ export const HeaderContainer = styled('header', { name: 'HeaderContainer' })(({ 
 const LinkStyled = styled(Link, {
   name: 'LinkStyled'
 })(({ theme }) => ({
-  color: theme.palette.primary.main,
-  textDecoration: 'none'
+  color: theme.palette.primary.light,
+  textDecoration: 'none',
+
+  '&:hover': {
+    color: theme.palette.primary.main,
+    textDecoration: 'underline'
+  }
 }))
 
 //TODO AJUSTAR LINKS

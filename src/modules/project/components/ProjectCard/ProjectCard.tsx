@@ -1,4 +1,5 @@
-import { Card, CardContent, styled, Typography } from '@mui/material'
+import { Card, CardContent, styled } from '@mui/material'
+import ColorText from 'modules/animation/components/ColorText/ColorText'
 import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -31,12 +32,9 @@ const SoonContent = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  borderTop: '1px solid red',
-  borderBottom: '1px solid red',
   padding: 10,
   width: '100%',
-  background: theme.palette.primary.light,
-  borderRadius: 3
+  background: theme.palette.primary.main
 }))
 
 export default function ProjectCard({ project }: ProjectCardProps) {
@@ -49,7 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       ) : (
         <CardContentWithoutProject>
           <SoonContent>
-            <Typography>{t('Em breve')}</Typography>
+            <ColorText>{t('Em breve')}</ColorText>
           </SoonContent>
         </CardContentWithoutProject>
       )}
