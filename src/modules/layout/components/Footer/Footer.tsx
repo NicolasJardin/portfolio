@@ -96,7 +96,12 @@ const Circle = styled('div', {
   background: theme.palette.primary.main,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  transition: theme.transitions.create('transform'),
+
+  '&:hover': {
+    transform: 'scale(1.2)'
+  }
 }))
 
 const Info = styled('div', {
