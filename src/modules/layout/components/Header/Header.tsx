@@ -32,13 +32,13 @@ const Header: FC = () => {
 
   return (
     <HeaderContainer>
+      <LinkStyled to="/">{t('Sobre mim')}</LinkStyled>
       <LinkStyled to="/">{t('Formações')}</LinkStyled>
-      <LinkStyled to="/project">{t('Projetos')}</LinkStyled>
       <LinkStyled to="/">
         <WaterText text={<Typography variant="h4">NJ</Typography>} />
       </LinkStyled>
-      <LinkStyled to="/">{t('Sobre mim')}</LinkStyled>
-      <LinkStyled to="/">{t('Habilidades')}</LinkStyled>
+      <LinkStyled to="/skill">{t('Habilidades')}</LinkStyled>
+      <LinkStyled to="/project">{t('Projetos')}</LinkStyled>
     </HeaderContainer>
   )
 }
