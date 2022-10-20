@@ -9,6 +9,7 @@ import { ReactComponent as StyledComponentsIcon } from 'assets/svg/styled-compon
 import { ReactComponent as ReduxIcon } from 'assets/svg/redux.svg'
 import { ReactComponent as MaterialUiIcon } from 'assets/svg/material-ui.svg'
 import { ReactComponent as SassIcon } from 'assets/svg/sass.svg'
+import { useMemo } from 'react'
 
 type SkillListProps = {}
 
@@ -38,60 +39,30 @@ const Skill = styled(Card, {
 }))
 
 export default function SkillList(props: SkillListProps) {
+  const skills = useMemo(
+    () => [
+      <HtmlIcon />,
+      <CssIcon />,
+      <JavascriptIcon />,
+      <GitIcon />,
+      <ReactIcon />,
+      <MaterialUiIcon />,
+      <ReactQueryIcon />,
+      <ReduxIcon />,
+      <StyledComponentsIcon />,
+      <SassIcon />
+    ],
+    []
+  )
+
   return (
     <SkillListRoot>
       <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <Skill>
-            <HtmlIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <CssIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <JavascriptIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <GitIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <ReactIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <MaterialUiIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <ReactQueryIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <ReduxIcon />
-          </Skill>
-        </Grid>
-        <Grid item xs={4}>
-          <Skill>
-            <StyledComponentsIcon />
-          </Skill>
-        </Grid>
-
-        <Grid item xs={4}>
-          <Skill>
-            <SassIcon />
-          </Skill>
-        </Grid>
+        {skills.map((skill, index) => (
+          <Grid key={index} item xs={4}>
+            <Skill>{skill}</Skill>
+          </Grid>
+        ))}
       </Grid>
     </SkillListRoot>
   )
