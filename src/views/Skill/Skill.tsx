@@ -1,5 +1,6 @@
 import { Container, Divider, styled } from '@mui/material'
 import Page from 'modules/layout/components/Page'
+import SkillDisplay from 'modules/skill/components/SkillDisplay'
 import SkillList from 'modules/skill/components/SkillList'
 
 type SkillProps = {}
@@ -25,6 +26,8 @@ export default function Skill(props: SkillProps) {
         <SkillList />
 
         <Divider orientation="vertical" flexItem />
+
+        <SkillDisplay />
       </SkillContainer>
     </SkillRoot>
   )
