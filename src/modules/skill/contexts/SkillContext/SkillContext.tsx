@@ -4,10 +4,10 @@ import { Skill } from 'types/interfaces/skill/Skill'
 
 export type SkillContextStore = {
   skills: Skill[] | undefined
-  selectSkill: (index: number) => void
+  selectSkill: (index: number, fixed?: boolean) => void
   selectedSkill: Skill | undefined
   getSkillIcon: (skillType: SkillTypeEnum) => JSX.Element
-  clearSelectedSkill: () => void
+  clearSelectedSkill: (clearFixed?: boolean) => void
 }
 
 const SkillContext = createContext<SkillContextStore | undefined>(undefined)

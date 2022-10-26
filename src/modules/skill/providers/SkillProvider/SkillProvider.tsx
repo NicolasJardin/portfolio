@@ -23,12 +23,29 @@ export default function SkillProvider({
   const { data: skills } = useGetSkills()
 
   const [selectedSkill, setSelectedSkill] = useState<Skill>()
+  const [skillIsFixed, setSkillIsFixed] = useState<boolean>(false)
 
-  const selectSkill = useCallback((index: number) => setSelectedSkill(skills?.[index]), [skills])
+  const selectSkill = useCallback(
+    (index: number, fixed?: boolean) => {
+      if (skillIsFixed && !fixed) return
 
-  const clearSelectedSkill = useCallback(() => {
-    setSelectedSkill(undefined)
-  }, [])
+      setSelectedSkill(skills?.[index])
+      if (fixed) setSkillIsFixed(true)
+    },
+    [skills, skillIsFixed]
+  )
+
+  const clearSelectedSkill = useCallback(
+    (clearFixed?: boolean) => {
+      if (!skillIsFixed) return setSelectedSkill(undefined)
+
+      if (clearFixed && skillIsFixed) {
+        setSelectedSkill(undefined)
+        setSkillIsFixed(false)
+      }
+    },
+    [skillIsFixed]
+  )
 
   const getSkillIcon = useCallback((skillType: SkillTypeEnum) => {
     switch (skillType) {
