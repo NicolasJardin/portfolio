@@ -4,6 +4,7 @@ import { FadeOut } from 'modules/animation/keyframes/FadeOut'
 import useSkillContext from 'modules/skill/hooks/useSkillContext'
 import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CSSTransition } from 'react-transition-group'
 
 const SkillDisplayRoot = styled(Card, {
   name: 'SkillDisplay',
@@ -53,29 +54,31 @@ export default function SkillDisplay() {
   const { t } = useTranslation()
 
   return (
-    <SkillDisplayRoot selected={!!selectedSkill}>
-      {!!selectedSkill && (
-        <Fragment>
-          <CardContentStyled>
-            <TitleAndIcon direction="row" spacing={2}>
-              {getSkillIcon(selectedSkill.type)}
+    <CSSTransition timeout={300} unmountOnExit in={!!selectedSkill}>
+      <SkillDisplayRoot selected={!!selectedSkill}>
+        {!!selectedSkill && (
+          <Fragment>
+            <CardContentStyled>
+              <TitleAndIcon direction="row" spacing={2}>
+                {getSkillIcon(selectedSkill.type)}
 
-              <Typography variant="h4" fontWeight="bold">
-                {t(selectedSkill.type)}
-              </Typography>
-            </TitleAndIcon>
+                <Typography variant="h4" fontWeight="bold">
+                  {t(selectedSkill.type)}
+                </Typography>
+              </TitleAndIcon>
 
-            <Typography>{t(selectedSkill.description)}</Typography>
-          </CardContentStyled>
-          <CardActionsStyled>
-            <Button onClick={() => clearSelectedSkill(true)}>{t('Fechar')}</Button>
+              <Typography>{t(selectedSkill.description)}</Typography>
+            </CardContentStyled>
+            <CardActionsStyled>
+              <Button onClick={() => clearSelectedSkill(true)}>{t('Fechar')}</Button>
 
-            <Button onClick={() => window.open(selectedSkill.pageUrl, '_blank')}>
-              {t('Visitar página')}
-            </Button>
-          </CardActionsStyled>
-        </Fragment>
-      )}
-    </SkillDisplayRoot>
+              <Button onClick={() => window.open(selectedSkill.pageUrl, '_blank')}>
+                {t('Visitar página')}
+              </Button>
+            </CardActionsStyled>
+          </Fragment>
+        )}
+      </SkillDisplayRoot>
+    </CSSTransition>
   )
 }

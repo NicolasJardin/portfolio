@@ -1,4 +1,5 @@
 import { Card, Grid, styled } from '@mui/material'
+import { Pulse } from 'modules/animation/keyframes/Pulse'
 import useSkillContext from 'modules/skill/hooks/useSkillContext'
 
 type SkillListProps = {}
@@ -10,7 +11,7 @@ const SkillListRoot = styled('div', {
 
 const Skill = styled(Card, {
   name: 'Skill'
-})<{ selected: boolean }>(({ theme, selected }) => ({
+})<{ selected: boolean; clicked: boolean }>(({ theme, selected, clicked }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -18,6 +19,7 @@ const Skill = styled(Card, {
   cursor: 'pointer',
   transition: theme.transitions.create(['background-color', 'transform']),
   backgroundColor: selected ? theme.palette.primary.dark : '',
+  animation: clicked ? `${Pulse(theme.palette.primary.light)} 0.3s ease` : '',
 
   '&:hover': {
     backgroundColor: theme.palette.primary.dark
@@ -30,7 +32,8 @@ const Skill = styled(Card, {
 }))
 
 export default function SkillList(props: SkillListProps) {
-  const { skills, selectSkill, getSkillIcon, clearSelectedSkill, selectedSkill } = useSkillContext()
+  const { skills, selectSkill, getSkillIcon, clearSelectedSkill, selectedSkill, skillIsFixed } =
+    useSkillContext()
 
   return (
     <SkillListRoot>
@@ -38,6 +41,7 @@ export default function SkillList(props: SkillListProps) {
         {skills?.map((skill, index) => (
           <Grid key={index} item xs={4}>
             <Skill
+              clicked={skill.type === selectedSkill?.type && skillIsFixed}
               selected={skill.type === selectedSkill?.type}
               onMouseLeave={() => clearSelectedSkill()}
               onMouseEnter={() => selectSkill(index)}

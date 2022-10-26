@@ -74,7 +74,7 @@ export default function SkillProvider({
 
   return (
     <SkillContext.Provider
-      value={{ skills, selectSkill, selectedSkill, getSkillIcon, clearSelectedSkill }}
+      value={{ skills, selectSkill, selectedSkill, getSkillIcon, clearSelectedSkill, skillIsFixed }}
     >
       {children}
     </SkillContext.Provider>

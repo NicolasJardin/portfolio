@@ -8,6 +8,7 @@ export type SkillContextStore = {
   selectedSkill: Skill | undefined
   getSkillIcon: (skillType: SkillTypeEnum) => JSX.Element
   clearSelectedSkill: (clearFixed?: boolean) => void
+  skillIsFixed: boolean
 }
 
 const SkillContext = createContext<SkillContextStore | undefined>(undefined)
