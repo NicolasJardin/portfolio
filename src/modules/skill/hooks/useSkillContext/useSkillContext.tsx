@@ -3,5 +3,9 @@ import { SkillContextStore } from 'modules/skill/contexts/SkillContext/SkillCont
 import { useContext } from 'react'
 
 export default function useSkillContext() {
-  return useContext<SkillContextStore | undefined>(SkillContext)
+  const context = useContext<SkillContextStore | undefined>(SkillContext)
+
+  if (!context) throw new Error('useSkillContext hook must be used inside SkillProvider.')
+
+  return context
 }

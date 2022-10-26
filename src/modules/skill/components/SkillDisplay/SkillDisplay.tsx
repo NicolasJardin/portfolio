@@ -1,15 +1,19 @@
 import { Button, Card, CardActions, CardContent, Stack, styled, Typography } from '@mui/material'
-import { ReactComponent as HtmlIcon } from 'assets/svg/html.svg'
+import useSkillContext from 'modules/skill/hooks/useSkillContext'
+import { useTranslation } from 'react-i18next'
+import { CSSTransition, TransitionStatus } from 'react-transition-group'
 
 type SkillDisplayProps = {}
 
 const SkillDisplayRoot = styled(Card, {
   name: 'SkillDisplay',
   slot: 'Root'
-})(({ theme }) => ({
+})<{ state: TransitionStatus }>(({ theme, state }) => ({
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  opacity: state === 'entered' ? 1 : 0,
+  transition: theme.transitions.create('opacity')
 }))
 
 const TitleAndIcon = styled(Stack, {
@@ -43,27 +47,33 @@ const CardActionsStyled = styled(CardActions, {
 }))
 
 export default function SkillDisplay(props: SkillDisplayProps) {
+  //@TODO Ajustar clearSelectedSkill
+  const { selectedSkill, getSkillIcon, clearSelectedSkill } = useSkillContext()
+
+  const { t } = useTranslation()
+
   return (
-    <SkillDisplayRoot>
-      <CardContentStyled>
-        <TitleAndIcon direction="row" spacing={2}>
-          <HtmlIcon />
-          <Typography variant="h4" fontWeight="bold">
-            HTML
-          </Typography>
-        </TitleAndIcon>
+    <CSSTransition timeout={300} unmountOnExit in={!!selectedSkill}>
+      {state => (
+        <SkillDisplayRoot state={state}>
+          <CardContentStyled>
+            <TitleAndIcon direction="row" spacing={2}>
+              {getSkillIcon(selectedSkill!.type)}
 
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia harum expedita, voluptate
-          atque at dolores, exercitationem amet unde, incidunt sint doloremque perspiciatis ducimus
-          quam? Dignissimos amet incidunt delectus exercitationem veniam!
-        </Typography>
-      </CardContentStyled>
-      <CardActionsStyled>
-        <Button>Fechar</Button>
+              <Typography variant="h4" fontWeight="bold">
+                {t(selectedSkill!.type)}
+              </Typography>
+            </TitleAndIcon>
 
-        <Button>Visitar página</Button>
-      </CardActionsStyled>
-    </SkillDisplayRoot>
+            <Typography>{t(selectedSkill!.description)}</Typography>
+          </CardContentStyled>
+          <CardActionsStyled>
+            <Button onClick={clearSelectedSkill}>{t('Fechar')}</Button>
+
+            <Button>{t('Visitar página')}</Button>
+          </CardActionsStyled>
+        </SkillDisplayRoot>
+      )}
+    </CSSTransition>
   )
 }

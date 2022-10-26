@@ -2,6 +2,7 @@ import { Container, Divider, styled } from '@mui/material'
 import Page from 'modules/layout/components/Page'
 import SkillDisplay from 'modules/skill/components/SkillDisplay'
 import SkillList from 'modules/skill/components/SkillList'
+import SkillProvider from 'modules/skill/providers/SkillProvider'
 
 type SkillProps = {}
 
@@ -21,14 +22,16 @@ const SkillContainer = styled(Container, {
 
 export default function Skill(props: SkillProps) {
   return (
-    <SkillRoot>
-      <SkillContainer>
-        <SkillList />
+    <SkillProvider>
+      <SkillRoot>
+        <SkillContainer>
+          <SkillList />
 
-        <Divider orientation="vertical" flexItem />
+          <Divider orientation="vertical" flexItem />
 
-        <SkillDisplay />
-      </SkillContainer>
-    </SkillRoot>
+          <SkillDisplay />
+        </SkillContainer>
+      </SkillRoot>
+    </SkillProvider>
   )
 }

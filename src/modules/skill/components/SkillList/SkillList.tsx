@@ -1,15 +1,5 @@
 import { Card, Grid, styled } from '@mui/material'
-import { ReactComponent as CssIcon } from 'assets/svg/css.svg'
-import { ReactComponent as GitIcon } from 'assets/svg/git.svg'
-import { ReactComponent as HtmlIcon } from 'assets/svg/html.svg'
-import { ReactComponent as JavascriptIcon } from 'assets/svg/javascript.svg'
-import { ReactComponent as ReactQueryIcon } from 'assets/svg/react-query.svg'
-import { ReactComponent as ReactIcon } from 'assets/svg/react.svg'
-import { ReactComponent as StyledComponentsIcon } from 'assets/svg/styled-components.svg'
-import { ReactComponent as ReduxIcon } from 'assets/svg/redux.svg'
-import { ReactComponent as MaterialUiIcon } from 'assets/svg/material-ui.svg'
-import { ReactComponent as SassIcon } from 'assets/svg/sass.svg'
-import { useMemo } from 'react'
+import useSkillContext from 'modules/skill/hooks/useSkillContext'
 
 type SkillListProps = {}
 
@@ -39,28 +29,14 @@ const Skill = styled(Card, {
 }))
 
 export default function SkillList(props: SkillListProps) {
-  const skills = useMemo(
-    () => [
-      <HtmlIcon />,
-      <CssIcon />,
-      <JavascriptIcon />,
-      <GitIcon />,
-      <ReactIcon />,
-      <MaterialUiIcon />,
-      <ReactQueryIcon />,
-      <ReduxIcon />,
-      <StyledComponentsIcon />,
-      <SassIcon />
-    ],
-    []
-  )
+  const { skills, selectSkill, getSkillIcon } = useSkillContext()
 
   return (
     <SkillListRoot>
       <Grid container spacing={2}>
-        {skills.map((skill, index) => (
+        {skills?.map((skill, index) => (
           <Grid key={index} item xs={4}>
-            <Skill>{skill}</Skill>
+            <Skill onClick={() => selectSkill(index)}>{getSkillIcon(skill.type)}</Skill>
           </Grid>
         ))}
       </Grid>
