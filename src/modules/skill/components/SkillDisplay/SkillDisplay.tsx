@@ -1,19 +1,20 @@
 import { Button, Card, CardActions, CardContent, Stack, styled, Typography } from '@mui/material'
+import { FadeIn } from 'modules/animation/keyframes/FadeIn'
+import { FadeOut } from 'modules/animation/keyframes/FadeOut'
 import useSkillContext from 'modules/skill/hooks/useSkillContext'
-import { useRef } from 'react'
+import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CSSTransition, TransitionStatus } from 'react-transition-group'
-
-type SkillDisplayProps = {}
 
 const SkillDisplayRoot = styled(Card, {
   name: 'SkillDisplay',
   slot: 'Root'
-})<{ state: TransitionStatus }>(({ theme, state }) => ({
+})<{ selected: boolean }>(({ theme, selected }) => ({
+  display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  opacity: state === 'entered' ? 1 : 0,
-  transition: theme.transitions.create(['opacity', 'display'])
+  visibility: selected ? 'visible' : 'hidden',
+  animation: `${selected ? FadeIn : FadeOut} 0.3s linear`,
+  transition: 'visibility 0.3s linear'
 }))
 
 const TitleAndIcon = styled(Stack, {
@@ -46,38 +47,35 @@ const CardActionsStyled = styled(CardActions, {
   borderTop: `1px solid ${theme.palette.divider}`
 }))
 
-export default function SkillDisplay(props: SkillDisplayProps) {
+export default function SkillDisplay() {
   const { selectedSkill, getSkillIcon, clearSelectedSkill } = useSkillContext()
-  const ref = useRef(null)
 
   const { t } = useTranslation()
 
   return (
-    <CSSTransition timeout={300} unmountOnExit in={!!selectedSkill} nodeRef={ref}>
-      {state =>
-        !!selectedSkill && (
-          <SkillDisplayRoot state={state} ref={ref}>
-            <CardContentStyled>
-              <TitleAndIcon direction="row" spacing={2}>
-                {getSkillIcon(selectedSkill.type)}
+    <SkillDisplayRoot selected={!!selectedSkill}>
+      {!!selectedSkill && (
+        <Fragment>
+          <CardContentStyled>
+            <TitleAndIcon direction="row" spacing={2}>
+              {getSkillIcon(selectedSkill.type)}
 
-                <Typography variant="h4" fontWeight="bold">
-                  {t(selectedSkill.type)}
-                </Typography>
-              </TitleAndIcon>
+              <Typography variant="h4" fontWeight="bold">
+                {t(selectedSkill.type)}
+              </Typography>
+            </TitleAndIcon>
 
-              <Typography>{t(selectedSkill.description)}</Typography>
-            </CardContentStyled>
-            <CardActionsStyled>
-              <Button onClick={() => clearSelectedSkill(true)}>{t('Fechar')}</Button>
+            <Typography>{t(selectedSkill.description)}</Typography>
+          </CardContentStyled>
+          <CardActionsStyled>
+            <Button onClick={() => clearSelectedSkill(true)}>{t('Fechar')}</Button>
 
-              <Button onClick={() => window.open(selectedSkill.pageUrl, '_blank')}>
-                {t('Visitar página')}
-              </Button>
-            </CardActionsStyled>
-          </SkillDisplayRoot>
-        )
-      }
-    </CSSTransition>
+            <Button onClick={() => window.open(selectedSkill.pageUrl, '_blank')}>
+              {t('Visitar página')}
+            </Button>
+          </CardActionsStyled>
+        </Fragment>
+      )}
+    </SkillDisplayRoot>
   )
 }
