@@ -27,7 +27,7 @@
   {
     "type": "MATERIAL_UI",
     "pageUrl": "https://mui.com/pt/",
-    "description": "O MUI oferece um conjunto abrangente de ferramentas de interface do usuário para ajudá-lo a enviar novos recursos mais rapidamente. "
+    "description": "O MUI oferece um conjunto abrangente de ferramentas de interface do usuário para ajudá-lo a enviar novos recursos mais rapidamente."
   },
   {
     "type": "REACT_QUERY",
@@ -37,7 +37,7 @@
   {
     "type": "REDUX",
     "pageUrl": "https://redux.js.org/",
-    "description": "Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo. É mais comumente usado com bibliotecas como React ou Angular para criar interfaces de usuário. "
+    "description": "Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo. É mais comumente usado com bibliotecas como React ou Angular para criar interfaces de usuário."
   },
   {
     "type": "STYLED_COMPONENTS",
@@ -47,6 +47,6 @@
   {
     "type": "SASS",
     "pageUrl": "https://sass-lang.com/",
-    "description": "Sass é a linguagem de extensão CSS de nível profissional mais madura, estável e poderosa do mundo."
+    "description": "Sass é uma linguagem de folhas de estilo concebida inicialmente por Hampton Catlin e desenvolvida por Natalie Weizenbaum. Depois de suas versões iniciais, Weizenbaum e Chris Eppstein continuaram a estender Sass com SassScript, uma simples linguagem de script usada em arquivos Sass."
   }
 ]

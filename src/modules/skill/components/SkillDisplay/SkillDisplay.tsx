@@ -5,6 +5,7 @@ import useSkillContext from 'modules/skill/hooks/useSkillContext'
 import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CSSTransition } from 'react-transition-group'
+import { SkillTypeEnumLabel } from 'types/enums/skill/SkillTypeEnum'
 
 const SkillDisplayRoot = styled(Card, {
   name: 'SkillDisplay',
@@ -63,7 +64,7 @@ export default function SkillDisplay() {
                 {getSkillIcon(selectedSkill.type)}
 
                 <Typography variant="h4" fontWeight="bold">
-                  {t(selectedSkill.type)}
+                  {SkillTypeEnumLabel[selectedSkill.type]}
                 </Typography>
               </TitleAndIcon>
 
