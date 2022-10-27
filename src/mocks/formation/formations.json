@@ -1,0 +1,63 @@
+[
+  {
+    "type": "QI",
+    "title": "Técnologo em sistemas para internet",
+    "completionDate": "2022-08-18T03:24:00",
+    "description": "Técnologo em sistemas para internet com foco em desenvolvimento web, principais conteúdos: Html, Css, PHP, Java, SQL, MongoDB, Android."
+  },
+  {
+    "type": "QI",
+    "title": "Curso técnico em informática para internet",
+    "completionDate": "2021-08-23T03:24:00",
+    "description": "Curso técnico em informática com foco para desenvolvimento web, principais conteúdos: Html, Css, Javascript, Java, IOT, Kotlin, PHP, Flutter, SQL."
+  },
+  {
+    "type": "ALURA",
+    "title": "React: desenvolvendo uma biblioteca de componentes",
+    "completionDate": "2022-10-17T03:24:00",
+    "description": "Pacote NPM utilizando TSDX, publicação de biblioteca de componentes, styled components, storybook.",
+    "url": "https://cursos.alura.com.br/certificate/159f161f-c19b-413c-9e99-6949bd5bc5c6"
+  },
+  {
+    "type": "ALURA",
+    "title": "React: autenticando usuários",
+    "completionDate": "2022-10-04T03:24:00",
+    "description": "Autenticação de usúarios, autorização, segurança, axios.",
+    "url": "https://cursos.alura.com.br/certificate/8cb2404e-6e01-4f1b-9a4e-956b6b4456d6"
+  },
+  {
+    "type": "ALURA",
+    "title": "React: otimizando a performance",
+    "completionDate": "2022-07-08T03:24:00",
+    "description": "Memoização, renderização de componentes, analise de performance.",
+    "url": "https://cursos.alura.com.br/certificate/156e0ae6-aaaf-4691-b4a0-6b185d82d40c"
+  },
+  {
+    "type": "ALURA",
+    "title": "React: gerenciamento de estados globais com context API",
+    "completionDate": "2022-01-28T03:24:00",
+    "description": "Context API, estados globais, desacoplamento de componentes, hooks personalizados.",
+    "url": "https://cursos.alura.com.br/certificate/c18ae8fb-8b0d-42a3-a64c-b61afaa99411"
+  },
+  {
+    "type": "ALURA",
+    "title": "Layouts responsivos: trabalhando com layouts mobile",
+    "completionDate": "2022-01-16T03:24:00",
+    "description": "Responsividade, Mobile first, adaptação de diferentes layouts.",
+    "url": "https://cursos.alura.com.br/certificate/c1f5f329-9b59-43e3-b75e-7749a903b6b8"
+  },
+  {
+    "type": "ALURA",
+    "title": "Css: dispondo elementos com flexbox e grid",
+    "completionDate": "2022-01-04T03:24:00",
+    "description": "Flexbox, grid e suas propriedades.",
+    "url": "https://cursos.alura.com.br/certificate/fa71d85d-1926-4e45-b52c-3627a5498698"
+  },
+  {
+    "type": "ALURA",
+    "title": "React: abstraindo seu css com styled components",
+    "completionDate": "2022-01-03T03:24:00",
+    "description": "Styled components, Herança de estilos.",
+    "url": "https://cursos.alura.com.br/certificate/12bef5b7-a9a3-432d-9cf2-f35ece2beed0"
+  }
+]
