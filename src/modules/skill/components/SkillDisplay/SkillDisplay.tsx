@@ -2,7 +2,7 @@ import { Button, Card, CardActions, CardContent, Stack, styled, Typography } fro
 import { FadeIn } from 'modules/animation/keyframes/FadeIn'
 import { FadeOut } from 'modules/animation/keyframes/FadeOut'
 import useSkillContext from 'modules/skill/hooks/useSkillContext'
-import { Fragment } from 'react'
+import { Fragment, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CSSTransition } from 'react-transition-group'
 import { SkillTypeEnumLabel } from 'types/enums/skill/SkillTypeEnum'
@@ -54,9 +54,11 @@ export default function SkillDisplay() {
 
   const { t } = useTranslation()
 
+  const ref = useRef(null)
+
   return (
-    <CSSTransition timeout={300} unmountOnExit in={!!selectedSkill}>
-      <SkillDisplayRoot selected={!!selectedSkill}>
+    <CSSTransition timeout={300} unmountOnExit in={!!selectedSkill} nodeRef={ref}>
+      <SkillDisplayRoot selected={!!selectedSkill} ref={ref}>
         {!!selectedSkill && (
           <Fragment>
             <CardContentStyled>

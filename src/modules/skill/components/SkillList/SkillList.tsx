@@ -10,7 +10,8 @@ const SkillListRoot = styled('div', {
 })({})
 
 const Skill = styled(Card, {
-  name: 'Skill'
+  name: 'Skill',
+  shouldForwardProp: prop => prop !== 'selected' && prop !== 'clicked'
 })<{ selected: boolean; clicked: boolean }>(({ theme, selected, clicked }) => ({
   display: 'flex',
   alignItems: 'center',
