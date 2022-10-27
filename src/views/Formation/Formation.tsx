@@ -47,6 +47,14 @@ const StackWithTransition = styled(Stack, {
   opacity: state === 'entered' ? 1 : 0
 }))
 
+const InstitutionContent = styled('div', {
+  name: 'InstitutionContent'
+})<{ hasInstitution: boolean; state: TransitionStatus }>(({ hasInstitution, state, theme }) => ({
+  display: !hasInstitution ? 'none' : '',
+  transition: theme.transitions.create('opacity'),
+  opacity: state === 'entered' ? 1 : 0
+}))
+
 type Institution = 'qi' | 'alura'
 
 export default function Formation() {
@@ -76,19 +84,14 @@ export default function Formation() {
 
       <CSSTransition timeout={300} in={!!selectedInstitution} nodeRef={contentRef}>
         {state => (
-          <StackWithTransition
-            style={{ display: !selectedInstitution ? 'none' : '' }}
-            ref={contentRef}
-            state={state}
-            direction="row"
-            alignItems="center"
-            spacing={2}
-          >
-            <Icon onClick={() => setSelectedInstitution(undefined)}>
-              <ArrowBackIcon />
-            </Icon>
-            <Typography variant="h4">{t('Escolas e Faculdades QI')}</Typography>
-          </StackWithTransition>
+          <InstitutionContent state={state} hasInstitution={!!selectedInstitution} ref={contentRef}>
+            <Stack direction="row" alignItems="center" spacing={2}>
+              <Icon onClick={() => setSelectedInstitution(undefined)}>
+                <ArrowBackIcon />
+              </Icon>
+              <Typography variant="h4">{t('Escolas e Faculdades QI')}</Typography>
+            </Stack>
+          </InstitutionContent>
         )}
       </CSSTransition>
     </Page>
