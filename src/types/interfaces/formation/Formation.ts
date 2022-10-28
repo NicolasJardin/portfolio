@@ -1,7 +1,7 @@
-import { FormationTypeEnum } from 'types/enums/formation/FormationTypeEnum'
+import { FormationInstitutionEnum } from 'types/enums/formation/FormationInstitutionEnum'
 
 export interface Formation {
-  type: FormationTypeEnum
+  institution: FormationInstitutionEnum
   title: string
   completionDate: string
   description: string
