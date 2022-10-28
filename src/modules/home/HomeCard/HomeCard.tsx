@@ -4,7 +4,6 @@ import TypingText from 'modules/animation/components/TypingText'
 import WaterText from 'modules/animation/components/WaterText'
 import { FadeIn } from 'modules/animation/keyframes/FadeIn'
 import ButtonContained from 'modules/button/ButtonContained/ButtonContained'
-import FlexCenter from 'modules/styles/FlexCenter'
 import { useTranslation } from 'react-i18next'
 
 type HomeCardProps = {}
@@ -74,6 +73,15 @@ const ButtonContainedGithub = styled(ButtonHomeCard, {
     color: '#161B22',
     border: `1px solid #161B22`
   }
+})
+
+const FlexCenter = styled('div', {
+  name: 'FlexCenter',
+  slot: 'Root'
+})({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
 })
 
 export default function HomeCard(props: HomeCardProps) {
