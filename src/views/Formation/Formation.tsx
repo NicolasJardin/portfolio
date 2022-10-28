@@ -1,3 +1,4 @@
+import InstitutionContent from 'modules/formation/components/InstitutionContent'
 import InstitutionOptions from 'modules/formation/components/InstitutionOptions/InstitutionOptions'
 import Page from 'modules/layout/components/Page'
 import { useState } from 'react'
@@ -9,6 +10,8 @@ export default function Formation() {
   return (
     <Page>
       <InstitutionOptions selectedInstitution={[selectedInstitution, setSelectedInstitution]} />
+
+      <InstitutionContent selectedInstitution={[selectedInstitution, setSelectedInstitution]} />
     </Page>
   )
 }

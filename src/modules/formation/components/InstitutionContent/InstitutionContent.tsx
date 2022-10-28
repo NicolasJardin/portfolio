@@ -52,7 +52,7 @@ const BulletedList = styled(List, {
   '& .MuiListItem-root': {
     display: 'list-item',
 
-    '&:not(:first-child)': {
+    '&:not(:first-of-type)': {
       marginTop: 20
     }
   }
