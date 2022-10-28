@@ -6,6 +6,7 @@ const Home = lazy(() => import('views/Home'))
 const Project = lazy(() => import('views/Project'))
 const Skill = lazy(() => import('views/Skill'))
 const Formation = lazy(() => import('views/Formation'))
+const AboutMe = lazy(() => import('views/AboutMe'))
 const PageNotFound = lazy(() => import('routes/PageNotFound'))
 
 const Router = () => {
@@ -21,6 +22,8 @@ const Router = () => {
         <Route path="skill" element={<Skill />} />
 
         <Route path="formation" element={<Formation />} />
+
+        <Route path="about-me" element={<AboutMe />} />
       </Route>
     </Routes>
   )
