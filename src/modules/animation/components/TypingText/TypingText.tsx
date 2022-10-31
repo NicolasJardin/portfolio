@@ -1,6 +1,10 @@
 import { keyframes, styled, Typography, TypographyProps, useTheme } from '@mui/material'
 
-type TypingTextProps = TypographyProps
+type Animation = { time: number; steps: number; disabled?: boolean }
+
+type TypingTextProps = TypographyProps & {
+  animation: Animation
+}
 
 const Typing = keyframes`
   from { width: 0 }
@@ -24,14 +28,17 @@ export default function TypingText(props: TypingTextProps) {
 
   const TypingTextStyled = styled(Typography, {
     name: 'TypingText',
-    slot: 'Root'
-  })({
+    slot: 'Root',
+    shouldForwardProp: prop => prop !== 'animation'
+  })<{ animation: Animation }>(({ animation }) => ({
     overflow: 'hidden',
-    borderRight: '.15em solid orange',
+    borderRight: !animation.disabled ? `.15em solid ${palette.primary.main}` : '',
     whiteSpace: 'nowrap',
     letterSpacing: '.15em',
-    animation: `${Typing} 3.5s steps(40, end), ${Cursor} .75s step-end infinite`
-  })
+    animation: !animation.disabled
+      ? `${Typing} ${animation.time}s steps(${animation.steps}, end), ${Cursor} .75s step-end infinite`
+      : ''
+  }))
 
   return (
     <TypingTextRoot>

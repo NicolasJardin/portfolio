@@ -95,7 +95,15 @@ export default function HomeCard(props: HomeCardProps) {
         </FlexCenter>
 
         <FlexCenter>
-          <TypingText variant="h5">{t('Desenvoldedor Front-end')}</TypingText>
+          <TypingText
+            animation={{
+              steps: 40,
+              time: 3.5
+            }}
+            variant="h5"
+          >
+            {t('Desenvoldedor Front-end')}
+          </TypingText>
         </FlexCenter>
 
         <DividerWithMargin />
