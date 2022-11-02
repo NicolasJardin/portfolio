@@ -3,10 +3,11 @@ import TypingText from 'modules/animation/components/TypingText'
 import { FadeIn } from 'modules/animation/keyframes/FadeIn'
 import ChatBox from 'modules/display/components/ChatBox'
 import ContentWillAppear from 'modules/display/components/ContentWillAppear'
+import SocialMediaList from 'modules/display/components/SocialMediaList'
 import Page from 'modules/layout/components/Page'
+import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import useGetAboutMeMessages from 'services/aboutMe/queries/useGetAboutMeMessages'
-import { useMemo, useState, useCallback } from 'react'
 
 const AboutMeAvatar = styled(Avatar, {
   name: 'AboutMeAvatar'
@@ -51,6 +52,8 @@ export default function AboutMe() {
 
   const nextStep = useCallback(() => setStep(prevValue => prevValue + 1), [])
 
+  const lastMessageIndex = useMemo(() => (messages?.length ? messages.length - 1 : 0), [messages])
+
   return (
     <AboutMeRoot>
       <Stack direction="row" spacing={5}>
@@ -67,24 +70,29 @@ export default function AboutMe() {
         </Stack>
       </Stack>
 
-      <Stack spacing={4}>
+      <Stack spacing={2}>
         {chatMessages?.map((message, index) => (
-          <ChatBoxWithButton key={index}>
+          <ChatBoxWithButton key={index} firstMessage={index === 0}>
             <TypingText
+              variant="body2"
               animation={{
                 disabled: index < step,
                 steps: 100,
-                time: 5
+                time: 4
               }}
             >
               {t(message.content)}
             </TypingText>
 
             {step === index && (
-              <ContentWillAppear delay={6000}>
-                <ChatBoxButton onClick={nextStep} variant="outlined">
-                  {t(`${message.answer || 'Próximo'}`)}
-                </ChatBoxButton>
+              <ContentWillAppear delay={4000}>
+                {lastMessageIndex > index ? (
+                  <ChatBoxButton onClick={nextStep} variant="outlined">
+                    {t(`${message.answer || 'Próximo'}`)}
+                  </ChatBoxButton>
+                ) : (
+                  <SocialMediaList direction="row" spacing={2} />
+                )}
               </ContentWillAppear>
             )}
           </ChatBoxWithButton>

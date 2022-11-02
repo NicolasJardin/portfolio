@@ -1,9 +1,21 @@
 [
   {
-    "content": "Olá, tudo bem? me chamo Nicolas, tenho 20 anos e sou um desenvolvedor Front-end"
+    "content": "Olá, tudo bem? me chamo Nicolas, tenho 20 anos e sou um desenvolvedor Front-end, gostaria de saber mais sobre mim?",
+    "answer": "Sim"
   },
   {
-    "content": "Você gostaria de ler um pouco da minha trajetória profissional?",
-    "answer": "Sim"
+    "content": "Em 2021 obtive meu primeiro emprego na área de técnologia como estágiario, na Segure, Segurança do trabalho Ltda."
+  },
+  {
+    "content": "Atuava como desenvolvedor fullstack, onde aprofundei meus conhecimentos em PHP, Javascript e React."
+  },
+  {
+    "content": "No mesmo ano, fui contratado como Front-end na Moovin Plataforma E-commerce, onde trabalho atualmente."
+  },
+  {
+    "content": "Aqui pude consolidar minhas habilidades em React e busco me especializar na área cada vez mais."
+  },
+  {
+    "content": "Obrigado por ler até aqui, caso tenha interesse não hesite em entrar em contato."
   }
 ]
