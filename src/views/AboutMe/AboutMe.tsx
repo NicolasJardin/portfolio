@@ -8,6 +8,7 @@ import Page from 'modules/layout/components/Page'
 import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import useGetAboutMeMessages from 'services/aboutMe/queries/useGetAboutMeMessages'
+import photo from 'assets/img/photo.jpeg'
 
 const AboutMeAvatar = styled(Avatar, {
   name: 'AboutMeAvatar'
@@ -46,7 +47,7 @@ export default function AboutMe() {
   const [step, setStep] = useState<number>(0)
 
   const chatMessages = useMemo(
-    () => messages?.filter((message, index) => index <= step),
+    () => messages?.filter((_, index) => index <= step),
     [messages, step]
   )
 
@@ -57,7 +58,7 @@ export default function AboutMe() {
   return (
     <AboutMeRoot>
       <Stack direction="row" spacing={5}>
-        <AboutMeAvatar />
+        <AboutMeAvatar src={photo} />
 
         <Stack spacing={1}>
           <Typography variant="h3" fontWeight="bold">

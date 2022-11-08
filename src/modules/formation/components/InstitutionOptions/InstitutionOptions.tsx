@@ -1,6 +1,6 @@
 import { Avatar, Stack, styled } from '@mui/material'
-import alura from 'assets/png/alura.png'
-import qi from 'assets/png/qi.png'
+import alura from 'assets/img/alura.png'
+import qi from 'assets/img/qi.png'
 import { Dispatch, SetStateAction, useRef } from 'react'
 import { CSSTransition, TransitionStatus } from 'react-transition-group'
 import { FormationInstitutionEnum } from 'types/enums/formation/FormationInstitutionEnum'
