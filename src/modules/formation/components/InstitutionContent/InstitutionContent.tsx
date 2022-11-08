@@ -79,8 +79,7 @@ export default function InstitutionContent({
   )
 
   const title = useMemo(() => {
-    if (selectedInstitution === FormationInstitutionEnum.ALURA)
-      return t('Cursos online de tecnologia Alura')
+    if (selectedInstitution === FormationInstitutionEnum.ALURA) return 'Alura'
 
     return t('Escolas e Faculdades QI')
   }, [selectedInstitution, t])
