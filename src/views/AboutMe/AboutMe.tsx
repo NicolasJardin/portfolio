@@ -66,7 +66,7 @@ export default function AboutMe() {
           </Typography>
 
           <Typography variant="h4" color="primary.main">
-            Desenvolvedor Front-end
+            {t('Desenvolvedor Front-end')}
           </Typography>
         </Stack>
       </Stack>

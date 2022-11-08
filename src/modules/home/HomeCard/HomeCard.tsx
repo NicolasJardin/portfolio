@@ -102,7 +102,7 @@ export default function HomeCard(props: HomeCardProps) {
             }}
             variant="h5"
           >
-            {t('Desenvoldedor Front-end')}
+            {t('Desenvolvedor Front-end')}
           </TypingText>
         </FlexCenter>
 

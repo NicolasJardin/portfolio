@@ -1,5 +1,5 @@
 {
-  "Desenvoldedor Front-end": "Desenvoldedor Front-end",
+  "Desenvolvedor Front-end": "Desenvolvedor Front-end",
   "Formações": "Formações",
   "Sobre mim": "Sobre mim",
   "Projetos": "Projetos",
@@ -17,5 +17,13 @@
   "Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo. É mais comumente usado com bibliotecas como React ou Angular para criar interfaces de usuário.": "Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo. É mais comumente usado com bibliotecas como React ou Angular para criar interfaces de usuário.",
   "Styled components é uma biblioteca que possibilita escrever códigos CSS dentro do JavaScript. Com ele, você pode criar websites bonitos e funcionais. Além disso, ganhar mais agilidade e precisão no desenvolvimento web.": "Styled components é uma biblioteca que possibilita escrever códigos CSS dentro do JavaScript. Com ele, você pode criar websites bonitos e funcionais. Além disso, ganhar mais agilidade e precisão no desenvolvimento web.",
   "Sass é uma linguagem de folhas de estilo concebida inicialmente por Hampton Catlin e desenvolvida por Natalie Weizenbaum. Depois de suas versões iniciais, Weizenbaum e Chris Eppstein continuaram a estender Sass com SassScript, uma simples linguagem de script usada em arquivos Sass.": "Sass é uma linguagem de folhas de estilo concebida inicialmente por Hampton Catlin e desenvolvida por Natalie Weizenbaum. Depois de suas versões iniciais, Weizenbaum e Chris Eppstein continuaram a estender Sass com SassScript, uma simples linguagem de script usada em arquivos Sass.",
-  "formationDate": "Finalizado em {{formattedDate}}"
+  "formationDate": "Finalizado em {{formattedDate}}",
+  "Olá, tudo bem? me chamo Nicolas, tenho 20 anos e sou um desenvolvedor Front-end, gostaria de saber mais sobre mim?": "Olá, tudo bem? me chamo Nicolas, tenho 20 anos e sou um desenvolvedor Front-end, gostaria de saber mais sobre mim?",
+  "Sim": "Sim",
+  "Em 2021 obtive meu primeiro emprego na área de técnologia como estágiario, na Segure, Segurança do trabalho Ltda.": "Em 2021 obtive meu primeiro emprego na área de técnologia como estágiario, na Segure, Segurança do trabalho Ltda.",
+  "Atuava como desenvolvedor fullstack, onde aprofundei meus conhecimentos em PHP, Javascript e React.": "Atuava como desenvolvedor fullstack, onde aprofundei meus conhecimentos em PHP, Javascript e React.",
+  "No mesmo ano, fui contratado como Front-end na Moovin Plataforma E-commerce, onde trabalho atualmente.": "No mesmo ano, fui contratado como Front-end na Moovin Plataforma E-commerce, onde trabalho atualmente.",
+  "Aqui pude consolidar minhas habilidades em React e busco me especializar na área cada vez mais.": "Aqui pude consolidar minhas habilidades em React e busco me especializar na área cada vez mais.",
+  "Obrigado por ler até aqui, caso tenha interesse não hesite em entrar em contato.": "Obrigado por ler até aqui, caso tenha interesse não hesite em entrar em contato.",
+  "Próximo": "Próximo"
 }

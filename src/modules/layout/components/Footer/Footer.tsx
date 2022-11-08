@@ -65,7 +65,7 @@ export default function Footer(props: FooterProps) {
       <Stack spacing={2} alignItems="center" justifyContent="center">
         <SocialMediaList direction="row" spacing={4} iconSize={40} />
         <Typography fontStyle="italic" variant="caption">
-          Typography © 2022 Nicolas Jardin dos Santos
+          Copyright © 2022 Nicolas Jardin dos Santos
         </Typography>
       </Stack>
     </FooterRoot>
