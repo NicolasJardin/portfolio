@@ -11,7 +11,9 @@ const PageNotFound = () => {
     <Page>
       <Stack spacing={2} justifyContent="center" alignItems="center">
         <Typography variant="h2">{t('Ops! Página não encontrada.')}</Typography>
-        <Button onClick={() => navigate('/', { replace: true })}>Voltar para a home</Button>
+        <Button onClick={() => navigate('/', { replace: true })}>
+          {t('Voltar para o início')}
+        </Button>
       </Stack>
     </Page>
   )

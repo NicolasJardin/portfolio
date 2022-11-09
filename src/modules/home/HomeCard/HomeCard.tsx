@@ -1,9 +1,8 @@
 import { GitHub, LinkedIn } from '@mui/icons-material'
-import { Card, CardContent, Divider, styled, Typography } from '@mui/material'
+import { Button, Card, CardContent, Divider, styled, Typography } from '@mui/material'
 import TypingText from 'modules/animation/components/TypingText'
 import WaterText from 'modules/animation/components/WaterText'
 import { FadeIn } from 'modules/animation/keyframes/FadeIn'
-import ButtonContained from 'modules/button/ButtonContained/ButtonContained'
 import { useTranslation } from 'react-i18next'
 
 type HomeCardProps = {}
@@ -43,7 +42,7 @@ const DividerWithMargin = styled(Divider, {
   margin: '20px 0'
 })
 
-const ButtonHomeCard = styled(ButtonContained, {
+const ButtonHomeCard = styled(Button, {
   name: 'ButtonHomeCard'
 })({
   height: 60,
@@ -111,6 +110,7 @@ export default function HomeCard(props: HomeCardProps) {
         <ButtonsContainer>
           <ButtonContent>
             <ButtonContainedLinkedin
+              variant="contained"
               onClick={() => window.open('https://www.linkedin.com/in/jardin-nicolas/')}
               startIcon={<LinkedIn />}
             >
@@ -122,6 +122,7 @@ export default function HomeCard(props: HomeCardProps) {
 
           <ButtonContent>
             <ButtonContainedGithub
+              variant="contained"
               onClick={() => window.open('https://github.com/NicolasJardin')}
               startIcon={<GitHub />}
             >

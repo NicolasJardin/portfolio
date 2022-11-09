@@ -1,10 +1,7 @@
 import { styled } from '@mui/material'
-import { PropsWithChildren } from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from '../Header'
 import Footer from '../Footer'
-
-type LayoutProps = {}
+import Header from '../Header'
 
 const LayoutRoot = styled('div', {
   name: 'Layout',
@@ -17,7 +14,7 @@ const LayoutContent = styled('div', {
   height: '100%'
 })
 
-export default function Layout({ children }: PropsWithChildren<LayoutProps>) {
+export default function Layout() {
   return (
     <LayoutRoot>
       <Header />
