@@ -2,6 +2,10 @@
 
 :atom_symbol: Professional portfolio built with React
 
+### [Live Demo](https://nicolasjardin-portfolio.netlify.app/)
+
+![Screenshot](src/assets/img/screenshot.png)
+
 ## Running Locally
 
 With npm
