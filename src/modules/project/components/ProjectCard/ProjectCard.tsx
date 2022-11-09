@@ -1,12 +1,6 @@
 import { Card, CardContent, styled } from '@mui/material'
 import ColorText from 'modules/animation/components/ColorText/ColorText'
-import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
-
-//TODO tipar project
-type ProjectCardProps = {
-  project?: any
-}
 
 const ProjectCardRoot = styled(Card, {
   name: 'ProjectCard',
@@ -37,20 +31,16 @@ const SoonContent = styled('div', {
   background: theme.palette.primary.main
 }))
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard() {
   const { t } = useTranslation()
 
   return (
     <ProjectCardRoot>
-      {project ? (
-        <Fragment>TODO</Fragment>
-      ) : (
-        <CardContentWithoutProject>
-          <SoonContent>
-            <ColorText>{t('Em breve')}</ColorText>
-          </SoonContent>
-        </CardContentWithoutProject>
-      )}
+      <CardContentWithoutProject>
+        <SoonContent>
+          <ColorText>{t('Em breve')}</ColorText>
+        </SoonContent>
+      </CardContentWithoutProject>
     </ProjectCardRoot>
   )
 }

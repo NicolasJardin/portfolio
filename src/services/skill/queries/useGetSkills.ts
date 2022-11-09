@@ -7,7 +7,6 @@ type Data = Skill[]
 type UseGetSkillsOptions = UseQueryOptions<Data>
 type UseGetSkillsResult = UseQueryResult<Data>
 
-//TODO Ver se tem como tirar typecast
 export default function useGetSkills(options?: UseGetSkillsOptions): UseGetSkillsResult {
   const queryKey = useMemo(() => ['skills'], [])
 
