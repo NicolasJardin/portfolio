@@ -3,6 +3,7 @@ import ColorText from 'modules/animation/components/ColorText/ColorText'
 import { useTranslation } from 'react-i18next'
 
 type ProjectCardProps = {
+  isHighlighted?: boolean
   project?: {
     title: string
     description: string
@@ -14,11 +15,12 @@ type ProjectCardProps = {
 const ProjectCardRoot = styled(Card, {
   name: 'ProjectCard',
   slot: 'Root'
-})<{ hasUrl: boolean }>(({ theme, hasUrl }) => ({
+})<{ hasUrl: boolean; isHighlighted?: boolean }>(({ theme, hasUrl, isHighlighted }) => ({
   transition: theme.transitions.create('transform'),
   height: 300,
   cursor: hasUrl ? 'pointer' : '',
-
+  border: isHighlighted ? '2px solid #3498db' : '',
+  boxShadow: isHighlighted ? '0 8px 12px rgba(0, 0, 0, 0.2)' : '',
   '&:hover': {
     transform: 'scale(1.02)'
   }
@@ -66,13 +68,14 @@ const ProjectContent = styled(Stack, {
   textAlign: 'center'
 })
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, isHighlighted }: ProjectCardProps) {
   const { t } = useTranslation()
 
   return (
     <ProjectCardRoot
       hasUrl={!!project?.url}
       onClick={() => !!project?.url && window.open(project.url)}
+      isHighlighted={isHighlighted}
     >
       {project ? (
         <ProjectContent>
